@@ -1,14 +1,15 @@
 import io.kotlintest.shouldBe
+import org.junit.jupiter.api.Disabled
 import org.junit.jupiter.api.Test
 
 class DayOne {
 
     @Test
     fun `should calculate fuel quantity`() {
-        SpaceCraftModule(mass = 12).fuelQuantity shouldBe 2
-        SpaceCraftModule(mass = 14).fuelQuantity shouldBe 2
-        SpaceCraftModule(mass = 1969).fuelQuantity shouldBe 654
-        SpaceCraftModule(mass = 100756).fuelQuantity shouldBe 33583
+        SpaceCraftModule(mass = 12).fuelMass shouldBe 2
+        SpaceCraftModule(mass = 14).fuelMass shouldBe 2
+        SpaceCraftModule(mass = 1969).fuelMass shouldBe 966
+        SpaceCraftModule(mass = 100756).fuelMass shouldBe 50346
     }
 
     @Test
@@ -20,7 +21,7 @@ class DayOne {
                 SpaceCraftModule(1969),
                 SpaceCraftModule(100756)
             )
-        ).fuelQuantity shouldBe 34241
+        ).fuelQuantity shouldBe 51316
     }
 
     @Test
